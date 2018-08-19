@@ -19,7 +19,7 @@ li{
     list-style-type: none;
 }
 a{color:#fff;text-decoration: none;}
-a:hover{text-decoration: none;color:#fff;}
+a:link,a:visited,a:hover,a:active{text-decoration: none;color:#fff;}
 input,textarea,button{outline:none;}
 /* 密码软键盘隐藏 */
 input::-webkit-input-safebox-button{display: none;}
