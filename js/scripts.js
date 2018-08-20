@@ -73,4 +73,13 @@ $('.onPopup').on('click', function () {
     $("body,html").scrollTop(scrollHeight);
     clMask(scrollHeight);
 })
+// 工作经验调用json
+$.ajax({
+    url: "../js/suffer.json",//json文件位置
+    type: "post",
+    dataType: "json", //返回数据格式为json
+    success: function(data) {//请求成功完成后要执行的方法
+        console.log(data)
 
+    }
+})
