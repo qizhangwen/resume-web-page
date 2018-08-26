@@ -171,7 +171,7 @@ ul.list-right{float: right;width: 73%;}
 
 /* 工作经验弹窗 */
 .work-popup{display:none;position:fixed;top:50%;left:50%;z-index:2001;transform: translate(-50%,-50%);width:600px;height:500px;border-radius:5px;background: rgba(255,255,255,.95)}
-.fork{position:absolute;right:8px;transform:rotate(45deg);font-size:25px;cursor:pointer;}
-
+.work-popup .fork{position:absolute;right:8px;transform:rotate(45deg);font-size:25px;cursor:pointer;}
+.work-popup .scrollbar{margin-top:35px;padding:0 10px;width:100%;height:90%;background: gray;}
 
 footer{margin-top:50px;width:100%;height:50px;line-height:50px;text-align:center;font-size:12px;background: #eee;}

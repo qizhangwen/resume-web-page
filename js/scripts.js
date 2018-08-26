@@ -72,7 +72,19 @@ $('.onPopup').on('click', function () {
     $('body').css({overflow:'hidden'});
     $("body,html").scrollTop(scrollHeight);
     clMask(scrollHeight);
+    clWork(scrollHeight);
 })
+
+// 关闭工作经验弹窗
+function clWork (h) {
+    $('.fork').on('click', function () {
+        $('.mask').fadeOut(300);
+        $('.work-popup').fadeOut(300);
+        $('body').css({overflow:'visible'});
+        $("body,html").scrollTop(h);
+    })
+}
+
 // 工作经验调用json
 $.ajax({
     url: "./json/suffer.json",//json文件位置
