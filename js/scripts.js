@@ -75,8 +75,8 @@ $('.onPopup').on('click', function () {
 })
 // 工作经验调用json
 $.ajax({
-    url: "../js/suffer.json",//json文件位置
-    type: "post",
+    url: "./json/suffer.json",//json文件位置
+    type: "get",
     dataType: "json", //返回数据格式为json
     success: function(data) {//请求成功完成后要执行的方法
         console.log(data)
