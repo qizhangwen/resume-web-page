@@ -16,6 +16,13 @@
 
 })(jQuery);
 
+
+function getScrollTop() {
+    var scrollTop = (((t = document.documentElement) || (t = document.body.parentNode)) && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
+    return scrollTop;
+}
+
+
 // 返回顶部
 $(window).scroll(function(){
     var h = $(window).scrollTop();
@@ -66,13 +73,14 @@ $('.caption').on('click', function () {
 // 工作经验弹窗
 $('.onPopup').on('click', function () {
     var thisId = $(this).attr('data-id');
-    var scrollHeight = $(window).scrollTop(); // 当前窗口距离页面顶部高度
+    var scrollHeight = getScrollTop() ; // 当前窗口距离页面顶部高度
     $('.mask').fadeIn(300);
     $('.work-popup').fadeIn(300);
     $('body').css({overflow:'hidden'});
     $("body,html").scrollTop(scrollHeight);
     clMask(scrollHeight);
     clWork(scrollHeight);
+    getWorkExp(thisId);
 })
 
 // 关闭工作经验弹窗
@@ -86,12 +94,51 @@ function clWork (h) {
 }
 
 // 工作经验调用json
-$.ajax({
-    url: "./json/suffer.json",//json文件位置
-    type: "get",
-    dataType: "json", //返回数据格式为json
-    success: function(data) {//请求成功完成后要执行的方法
-        console.log(data)
-
-    }
-})
+function getWorkExp (id) {
+    $.ajax({
+        url: "./json/suffer.json",//json文件位置
+        type: "get",
+        dataType: "json", //返回数据格式为json
+        success: function(data) {//请求成功完成后要执行的方法
+            var dataWork;
+            switch (id) {
+                case "1":
+                    dataWork = data.firstWork;
+                    break;
+                case "2":
+                    dataWork = data.secondWork;
+                    break;
+                case "3":
+                    dataWork = data.thirdWork;
+                    break;
+                case "4":
+                    dataWork = data.fourthWork;
+            }
+            // console.log(dataWork)
+            var text = '';
+            text +='<h4>' + dataWork.companyName + '</h4>';
+            text +='<span class="tag tag-green">' + dataWork.time + '</span>';
+            text +='<span class="tag">' + dataWork.department + '</span>';
+            text +='<span class="tag tag-red">' + dataWork.position + '</span>';
+            text +='<span class="tag tag-gray job-duties">' + dataWork.jobDuties + '</span>';
+            if(dataWork.project){
+                for(var i in dataWork.project){
+                    text +='<div class="work-project">';
+                    text +='<div class="left-line"><p class="line-num">' + (parseInt(i)+1) + '</p><p class="line"></p></div>';
+                    text +='<div class="right-cont">' +
+                        '<p class="project-name">' + dataWork.project[i].name + '</p>';
+                    if(dataWork.project[i].time){
+                        text +='<span class="tag tag-green">' + dataWork.project[i].time + '</span>';
+                    }
+                    text +='<div class="project-cont">';
+                    for(var t in dataWork.project[i].content){
+                        text +='<p>' + dataWork.project[i].content[t] + '</p>'
+                    }
+                    text +='</div></div>';
+                    text +='</div>';
+                }
+            }
+            $('#work-experience').empty().append(text);
+        }
+    })
+}

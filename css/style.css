@@ -170,8 +170,18 @@ ul.list-right{float: right;width: 73%;}
 .cont_box .post{display:block;margin-top:5px;}
 
 /* 工作经验弹窗 */
-.work-popup{display:none;position:fixed;top:50%;left:50%;z-index:2001;transform: translate(-50%,-50%);width:600px;height:500px;border-radius:5px;background: rgba(255,255,255,.95)}
-.work-popup .fork{position:absolute;right:8px;transform:rotate(45deg);font-size:25px;cursor:pointer;}
-.work-popup .scrollbar{margin-top:35px;padding:0 10px;width:100%;height:90%;background: gray;}
+.work-popup{display:none;position:fixed;top:50%;left:50%;z-index:2001;transform: translate(-50%,-50%);padding-bottom:20px;width:600px;border-radius:5px;background: rgba(255,255,255,.95)}
+.work-popup .fork{position:absolute;top:-12.5px;right:-12.5px;display:inline-block;width:25px;height:25px;line-height:25px;text-align:center;font-size:25px;color:#fff;border-radius:50%;transform:rotate(45deg);cursor:pointer;background:#F56C6C;}
+.work-popup .scrollbar{margin-top:13px;padding:0 15px;width:100%;height:95%;}
+.work-popup .job-duties{margin-bottom:15px;padding:5px 10px;width:100%;height: auto;line-height:20px;white-space: pre-wrap;text-align:justify;}
+.work-popup .work-project{display:flex;}
+.work-popup .left-line{position:relative;flex-grow: 0;width:25px;}
+.work-popup .line-num{position:absolute;z-index:99;display:inline-block;width:24px;height:24px;justify-content: center;text-align:center;font-size:14px;box-sizing: border-box;background: #fff;border-radius: 50%;border:2px solid;border-color:initial;font-weight: 700;}
+.work-popup .line{position:absolute;top:0;bottom:0;left:11px;width:2px;height:100%;border-color: inherit;background-color: #c0c4cc;}
+
+.work-popup .right-cont{flex-grow: 1;padding:0 0 20px 10px;width:100%;text-align:left;}
+.work-popup .project-name{margin-bottom:10px;display: inline-block;height:22px;line-height: 22px;}
+.work-popup .right-cont .tag-green{margin-left:10px;height:22px;line-height:22px;}
+.work-popup .project-cont{margin-bottom:5px;padding: 5px 10px;line-height:20px;font-size: 12px;color:#e6a23c;border:1px solid rgba(230,162,60,.2);border-radius: 4px;box-sizing: border-box;background: rgba(230,162,60,.1);}
 
 footer{margin-top:50px;width:100%;height:50px;line-height:50px;text-align:center;font-size:12px;background: #eee;}
