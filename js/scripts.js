@@ -73,7 +73,7 @@ $('.caption').on('click', function () {
 // 工作经验弹窗
 $('.onPopup').on('click', function () {
     var thisId = $(this).attr('data-id');
-    var scrollHeight = getScrollTop() ; // 当前窗口距离页面顶部高度
+    var scrollHeight = $(window).scrollTop() ; // 当前窗口距离页面顶部高度
     $('.mask').fadeIn(300);
     $('.work-popup').fadeIn(300);
     $('body').css({overflow:'hidden'});
