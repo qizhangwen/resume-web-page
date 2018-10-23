@@ -1,0 +1,137 @@
+<h1>CSS规范</h1>
+<h2>css书写规范</h2>
+<ol>
+	<li>css类命名参考<span class="jump-page">内容命名</span></li>
+	<li>
+		<p>禁止使用层级过深的选择器，最多3级</p>
+		<p>错误示例：</p>
+		<pre>
+			<code>
+				<span>
+.main .container .wrap .box .blue-color{}
+.wrap .container .box .red-color{}
+				</span>
+			</code>
+		</pre>
+	</li>
+	<li>除非有特定的功能、组件要求等，禁止随意使用id来定义元素样式</li>
+	<li>
+		<p>除非是样式reset需要，禁止对纯元素选择器设置特定样式，避免样式污染</p>
+		<p>错误示例：</p>
+		<pre>
+			<code>
+				<span>
+// 会导致页面所有的a标签都被加上背景
+a{background:url(XXX);}
+
+//后期修改可能会添加一些span标签，如果刚好在div里面，会被污染；不利于后期维护
+div span{display:block}
+				</span>
+			</code>
+		</pre>
+	</li>
+	<li>尽量少用!important</li>
+	<li>少用行内样式sytle=""</li>
+	<li>尽量使用属性缩写写法</li>
+	<li>
+		<p>尽量缩写16进制颜色代码</p>
+		<p>示例：</p>
+		<pre>
+			<code>
+				<span>
+color:#000; // #000000
+color:#fed; // #ffeedd
+				</span>
+			</code>
+		</pre>
+	</li>
+	<li>
+		<p>去掉小数点前的“0”</p>
+		<p>示例：</p>
+		<pre>
+			<code>
+				<span>
+font-size:.3rem
+font-size.2em
+				</span>
+			</code>
+		</pre>
+	</li>
+</ol>
+<h2>CSS书写顺序</h2>
+<p>正确的css书写顺序不仅易于查看，并且也属于css样式优化的一种方式</p>
+<ol>
+	<li>定位属性：position, top, right, z-index, display, float等</li>
+	<li>盒子属性：width, height, padding, margin</li>
+	<li>文字系列：font, line-height, letter-spacing, color等</li>
+	<li>背景：background, border等</li>
+	<li>其他：animation, transition等</li>
+</ol>
+<p>示例：</p>
+<pre>
+	<code>
+		<span>
+// 此示例只是用来展示样式书写顺序
+.box{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:99;
+	display:flex;
+	width:100px;
+	height:100px;
+	padding:10px;
+	margin:10px;
+	line-height:80px;
+	font-size:16px;
+	color:#666;
+	background:#000;
+	border:1px solid #999;
+	border-radius:5px;
+	.
+	.
+	.
+}
+		</span>
+	</code>
+</pre>
+<h2>reset示例</h2>
+<h3>PC端</h3>
+<button class="copy-code-button">Copy</button>
+<pre>
+	<code>
+		<span>
+body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form,header,section,article,footer,*{margin:0;padding:0;}
+html, body{width:100%;height:100%;font-size:14px;color:#000;letter-spacing: .2px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;background: #fff;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+em,b{font-style:normal}
+li{list-style-type: none;}
+a{color:#fff;text-decoration: none;}
+a:link,a:visited,a:hover,a:active{text-decoration: none;color:#fff;}
+input,textarea,button,select,textarea{outline:none;font:12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif}
+img{border:0}
+table{border-collapse:collapse;border-spacing:0}
+td,th,ul,ol{padding:0}
+		</span>
+	</code>
+</pre>
+<blockquote class="prompt">
+	<strong><i class="iconfont icon-Icon-tishi"></i>提示</strong>
+	<p>移动端页面不需要设置微软雅黑、宋体等字体，终端浏览器字体取决于设备上的系统字体。</p>
+</blockquote>
+
+
+
+<script src="js/copy-button.js"></script>
+<script>
+	$('.jump-page').on('click', function () {
+		$('.norm-directory li').eq(0).addClass('active').siblings().removeClass('active');
+		$('#norm-cont').load('directory-0.html');
+		$('.nav-title').html($('.norm-directory li').eq(0).text());
+		$('.prev-box').attr('data-num',-1);
+		$('.next-box').attr('data-num',1);
+		window.sessionStorage.setItem("num", 0);
+	})
+</script>

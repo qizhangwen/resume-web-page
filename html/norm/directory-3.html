@@ -1,0 +1,42 @@
+<h1>HTML规范</h1>
+<h2>html标签</h2>
+<ol>
+	<li>标签必须合法闭合、嵌套正确、标签名必须小写</li>
+	<li>标签语法无错误，需要符合语义化</li>
+	<li>
+		<p>标签的自定义属性以 data- 开头</p>
+		<p>示例：</p>
+<pre>
+	<code>
+		<span>
+<<span>a href="#" data-num="13"</span>><<span>/a</span>>
+		</span>
+	</code>
+</pre>
+	</li>
+	<li>除非有特定的功能、组件要求等，禁止随意使用id来定义元素样式</li>
+	<li>
+		<p>标签中的属性需要按照固定顺序去书写</p>
+		<p>示例：</p>
+<pre>
+	<code>
+		<span>
+// 属性应该按照特定的顺序出现以保证易读性
+class  
+id  
+name  
+data-*  
+src , for, type, href, value, max-length, max,min, pattren
+placeholder, title, alt
+aria-*, role
+required, readonly, disabled
+如：
+<<span>div class="box" id="box-num" name="" data-id=""<span>><<span>/div</span>>
+		</span>
+	</code>
+</pre>
+	</li>
+	<li>标签中根据需求使用title属性进行文字提示</li>
+	<li>img标签中需要写alt属性进行图片提示</li>
+	<li>标签中的属性都要使用统一的单引号或者双引号</li>
+</ol>

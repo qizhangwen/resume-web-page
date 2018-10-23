@@ -1,0 +1,102 @@
+<h1>命名与注释规范</h1>
+<h2>文件命名</h2>
+<p>文件名称统一使用英文单词或拼音缩写、数字和下划线的组合，可使用驼峰式命名，<span class="red-color">不可</span>使用汉字、空格和特殊字符进行命名。</p>
+<h2>内容命名</h2>
+<h3>class命名和id命名</h3>
+<ol>
+	<li>
+		<p>使用中划线“-”将英文字母、数字隔开，英文字母都要用小写，<span class="red-color">不要</span>使用驼峰式命名，<span class="red-color">不要</span>用下划线“_”命名</p>
+		<p>示例：</p>
+<pre>
+	<code>
+		<span>
+.banner-one   #banner-one
+		</span>
+	</code>
+</pre>
+	</li>
+	<li>
+		<p>类名命名需要语义化</p>
+		<p>示例：</p>
+<pre>
+	<code>
+		<span>
+.wrap{}         //外层容器
+.mod-box{}      //模块容器
+.btn-start{}      //开始
+.btn-more{}      //更多
+		</span>
+	</code>
+</pre>
+	</li>
+</ol>
+<h3>图片命名</h3>
+<ol>
+	<li>
+		<p>同类型的图片，用统一的名称进行命名，再用下划线“_”连接后面的不同类别</p>
+		<p>示例：</p>
+<pre>
+	<code>
+		<span>
+banner_index.jpg 、banner_content.jpg
+		</span>
+	</code>
+</pre>
+	</li>
+	<li>
+		<p>命名需要能体现图片的大概用途</p>
+	</li>
+</ol>
+<h2>注释规范</h2>
+<h3>html注释规则</h3>
+<p>较长或复杂的html文件，请在板块之间加入注释，确保页面结构清晰并更好的进行后期维护</p>
+<p>示例：</p>
+<button class="copy-code-button">Copy</button>
+<pre>
+	<code>
+		<span>
+<<span>!-- XX板块  开始--</span>>
+<<span>div class="box"</span>><<span>/div</span>>
+<<span>!-- XX板块  结束 --</span>>
+		</span>
+	</code>
+</pre>
+<h3>Js注释规则</h3>
+<p>给不同的功能前添加注释，js注释分为单行注释和多行注释</p>
+<pre>
+	<code>
+		<span>
+单行注释：//
+多行注释：/**/ 
+如果需要介绍函数功能和传参等代码事项请使用多行注释
+/*
+ * 
+ * 
+ */
+		</span>
+	</code>
+</pre>
+<h3>css注释规则</h3>
+<p>给不同的板块的css代码前面加上代码注释</p>
+<pre>
+	<code>
+		<span>
+/* XX板块 */
+.marin{}
+.box{}
+/* XX板块 */
+.
+.
+.
+		</span>
+	</code>
+</pre>
+<blockquote class="prompt">
+	<strong><i class="iconfont icon-Icon-tishi"></i>提示</strong>
+	<p>如果项目在进行后期维护的时候，维护人员需要在修改的地方进行注释</p>
+	<p>格式为：维护人员 + 维护的当前时间</p>
+</blockquote>
+
+
+
+<script src="js/copy-button.js"></script>
