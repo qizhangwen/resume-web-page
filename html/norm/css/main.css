@@ -1,3 +1,4 @@
+html,body{position:fixed;width:100%;overflow:hidden}
 h1,h2,h3{padding-bottom:5px;border-bottom:1px solid #eee;}
 /* 左侧目录 */
 .norm-directory {position:absolute;top:0;bottom:0;left:0;width:200px;background: #fafafa;}
@@ -9,7 +10,8 @@ h1,h2,h3{padding-bottom:5px;border-bottom:1px solid #eee;}
 .norm-body .nav{display:flex;padding:10px 0;height:50px;}
 .norm-body .nav:hover .nav-title{opacity: 1;}
 .norm-body .nav:hover .directory{color:#000;}
-.directory{display: block;padding:0 15px;line-height: 50px;color:#ccc;cursor: pointer;}
+.directory{display: block;padding:0 15px;line-height: 50px;font-weight:800;color:#ccc;cursor: pointer;}
+.directory i{font-size: 18px;}
 .norm-body .nav-title{flex:1;padding:10px;text-align:center;font-size:20px;font-weight:200;color:#7e888b;opacity: 0;transition: opacity .2s ease;cursor:pointer;} 
 .norm-body .norm-cont{position:relative;max-width: 800px;margin:0 auto;padding: 20px 15px 40px 15px;line-height: 1.7;color:#333;font-size:12px;}
 .norm-body .norm-cont h1,.norm-body .norm-cont h2,.norm-body .norm-cont h3{margin-top:30px;margin-bottom: 20px;font-weight: 700;}
@@ -33,7 +35,14 @@ h1,h2,h3{padding-bottom:5px;border-bottom:1px solid #eee;}
 .norm-body .prev-box i,.norm-body .next-box i{font-size:40px;color:#ccc;}
 .norm-body .prev-box:hover i,.norm-body .next-box:hover i{color:#000;}
 
-
+@media (max-device-width:700px) { 
+	.norm-directory{left:-200px;}
+	.norm-body{left:0;width:100%;}
+	.norm-body .nav-title{display:none;}
+	.norm-body .body-inner{position:static;}
+	.norm-body .prev-box{position:static;top:auto;display:inline-block;float:left;max-width:50%;width:50%;}
+	.norm-body .next-box{position:static;top:auto;display:inline-block;float:left;max-width:50%;width:50%;}
+}
 
 
 
